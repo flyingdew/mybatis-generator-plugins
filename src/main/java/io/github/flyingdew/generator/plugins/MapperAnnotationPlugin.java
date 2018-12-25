@@ -5,6 +5,10 @@ import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
 import org.mybatis.generator.api.dom.java.Interface;
 import org.mybatis.generator.api.dom.java.TopLevelClass;
 
+/**
+ * @see org.mybatis.generator.plugins.MapperAnnotationPlugin
+ * @deprecated
+ */
 public class MapperAnnotationPlugin extends BasePlugin {
     @Override
     public boolean clientGenerated(Interface interfaz, TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {

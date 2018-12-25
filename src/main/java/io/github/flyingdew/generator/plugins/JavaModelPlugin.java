@@ -25,7 +25,7 @@ public class JavaModelPlugin extends BasePlugin {
 
     @Override
     public boolean modelBaseRecordClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
-        String remarks = getTableRemarks(introspectedTable.getTableConfiguration().getTableName());
+        String remarks = introspectedTable.getRemarks();
         remarks = StringUtility.stringHasValue(remarks) ? remarks : topLevelClass.getType().getShortName();
 
         if (enableRemarks) {

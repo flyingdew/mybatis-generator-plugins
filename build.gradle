@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'io.github.flyingdew'
-version '1.0.0-SNAPSHOT'
+version '1.0.1-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
@@ -28,7 +28,7 @@ artifacts {
 apply from: 'publish.gradle'
 
 dependencies {
-    compile 'org.mybatis.generator:mybatis-generator-core:1.3.2'
+    compile 'org.mybatis.generator:mybatis-generator-core:1.3.6'
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
