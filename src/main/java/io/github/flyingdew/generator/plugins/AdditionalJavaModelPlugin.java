@@ -7,6 +7,7 @@ import org.mybatis.generator.api.JavaFormatter;
 import org.mybatis.generator.api.dom.DefaultJavaFormatter;
 import org.mybatis.generator.api.dom.java.*;
 import org.mybatis.generator.config.Context;
+import org.mybatis.generator.config.PropertyRegistry;
 import org.mybatis.generator.internal.util.JavaBeansUtil;
 import org.mybatis.generator.internal.util.StringUtility;
 
@@ -84,7 +85,8 @@ public class AdditionalJavaModelPlugin extends BasePlugin {
         }
 
         JavaFormatter javaFormatter = new DefaultJavaFormatter();
-        GeneratedJavaFile file = new GeneratedJavaFile(topLevelClass, targetProject, javaFormatter);
+        GeneratedJavaFile file = new GeneratedJavaFile(topLevelClass, targetProject,
+                context.getProperty(PropertyRegistry.CONTEXT_JAVA_FILE_ENCODING), javaFormatter);
         files.add(file);
         return files;
     }
