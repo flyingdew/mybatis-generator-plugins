@@ -5,8 +5,18 @@
 
 <generatorConfiguration>
     <context id="whprimary" targetRuntime="MyBatis3">
+        <property name="javaFileEncoding" value="UTF-8"/>
+
         <plugin type="io.github.flyingdew.generator.plugins.JavaModelPlugin">
             <property name="enableRemarks" value="true"/>
+            <property name="enableSwaggerAnnotations" value="false"/>
+        </plugin>
+
+        <plugin type="io.github.flyingdew.generator.plugins.AdditionalJavaModelPlugin">
+            <property name="targetProject" value="src/test/generated"/>
+            <property name="targetPackage" value="com.example.model"/>
+            <property name="nameSuffix" value="DTO"/>
+            <property name="enableRemarks" value="false"/>
             <property name="enableSwaggerAnnotations" value="true"/>
         </plugin>
 
