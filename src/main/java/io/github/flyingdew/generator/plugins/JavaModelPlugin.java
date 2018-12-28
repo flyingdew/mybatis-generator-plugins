@@ -12,7 +12,7 @@ import java.util.Properties;
 import static org.mybatis.generator.internal.util.StringUtility.isTrue;
 
 public class JavaModelPlugin extends BasePlugin {
-    private boolean enableRemarks = true;
+    private boolean enableRemarks;
     private boolean enableSwaggerAnnotations;
 
     @Override
