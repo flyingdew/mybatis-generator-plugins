@@ -75,6 +75,7 @@ public class AdditionalJavaModelPlugin extends BasePlugin {
             Field field = getJavaBeansField(column);
 
             topLevelClass.addField(field);
+            topLevelClass.addImportedType(field.getType());
             fieldGenerated(field, column);
 
             Method getter = JavaBeansUtil.getJavaBeansGetter(column, context, introspectedTable);
