@@ -24,7 +24,7 @@ public class AdditionalJavaModelPlugin extends BasePlugin {
     private String nameSuffix;
 
     private boolean enableRemarks;
-    private boolean enableSwaggerAnnotations;
+    private boolean enableSwagger;
 
     private List<String> errors = new ArrayList<>();
 
@@ -54,7 +54,7 @@ public class AdditionalJavaModelPlugin extends BasePlugin {
         }
 
         enableRemarks = isTrue(properties.getProperty("enableRemarks"));
-        enableSwaggerAnnotations = isTrue(properties.getProperty("enableSwaggerAnnotations"));
+        enableSwagger = isTrue(properties.getProperty("enableSwagger"));
     }
 
     @Override
@@ -112,7 +112,7 @@ public class AdditionalJavaModelPlugin extends BasePlugin {
             List<String> javaDocLines = topLevelClass.getJavaDocLines();
             addRemarksDoc(javaDocLines, remarks);
         }
-        if (enableSwaggerAnnotations) {
+        if (enableSwagger) {
             topLevelClass.addImportedType("io.swagger.annotations.ApiModel");
             topLevelClass.addImportedType("io.swagger.annotations.ApiModelProperty");
             topLevelClass.addAnnotation("@ApiModel(\"" + remarks + "\")");
@@ -127,7 +127,7 @@ public class AdditionalJavaModelPlugin extends BasePlugin {
             List<String> javaDocLines = field.getJavaDocLines();
             addRemarksDoc(javaDocLines, remarks);
         }
-        if (enableSwaggerAnnotations) {
+        if (enableSwagger) {
             field.addAnnotation("@ApiModelProperty(\"" + remarks + "\")");
         }
     }

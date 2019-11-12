@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'io.github.flyingdew'
-version '1.2.0-SNAPSHOT'
+version '1.2.1'
 
 sourceCompatibility = 1.8
 
@@ -31,4 +31,5 @@ dependencies {
     compile 'org.mybatis.generator:mybatis-generator-core:1.3.6'
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile 'mysql:mysql-connector-java:5.1.45'
 }
